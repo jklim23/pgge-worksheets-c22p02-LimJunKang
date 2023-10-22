@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float Hinput, Vinput;
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        Movement();
     }
+
+    private void Movement()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.
+        }
+    }
+
 }
