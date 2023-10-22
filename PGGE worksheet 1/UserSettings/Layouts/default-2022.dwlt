@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -430,13 +430,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\junka\OneDrive - Temasek Polytechnic (1)\year 2\sem
     2\PGGE\week 1\GPPE-worksheet-1\PGGE worksheet 1
@@ -444,8 +444,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c25a0000
-    m_LastClickedID: 23234
+    m_SelectedIDs: c65a0000
+    m_LastClickedID: 23238
     m_ExpandedIDs: 00000000aa5a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -602,9 +602,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 30fbffff
+      m_SelectedIDs: 32590000
+      m_LastClickedID: 22834
+      m_ExpandedIDs: 30fbffff32590000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -934,9 +934,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.043178055, y: 0.6220937, z: -0.03436312, w: -0.7810386}
+    m_Target: {x: -0.09729756, y: 0.51134545, z: -0.05837994, w: -0.8518913}
     speed: 2
-    m_Value: {x: -0.043178055, y: 0.62209374, z: -0.03436312, w: -0.7810386}
+    m_Value: {x: -0.09738171, y: 0.5100497, z: -0.05823195, w: -0.85262835}
   m_Size:
     m_Target: 4.1040754
     speed: 2
