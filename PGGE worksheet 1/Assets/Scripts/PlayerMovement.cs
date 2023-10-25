@@ -36,23 +36,18 @@ public class PlayerMovement : MonoBehaviour
     {
         IsGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
 
+        if (IsGrounded && Velocity.y < 0)
+        {
+            Velocity.y = -2.0f; 
+        }
+
         HInput = Input.GetAxis("Horizontal");
         VInput = Input.GetAxis("Vertical");
         
         //move charactor left right back and forth 
-        MovementDirection = transform.right * HInput + transform.forward * VInput; 
-        if (SprintInput)
-        {
-            PlayerController.Move(MovementDirection * SprintSpeed * Time.deltaTime);
-
-        }
-        else
-        {
-            PlayerController.Move(MovementDirection * RunSpeed * Time.deltaTime);
-
-        }
-       
-
+        MovementDirection = transform.right * HInput + transform.forward * VInput;
+        PlayerController.Move(MovementDirection * RunSpeed * Time.deltaTime);
+        
         //gravity effect 
         Velocity.y += gravity * Time.deltaTime;
         PlayerController.Move(Velocity  * Time.deltaTime);
@@ -67,8 +62,13 @@ public class PlayerMovement : MonoBehaviour
     //        PlayerController.Move(MovementDirection * JumpHeight * Time.deltaTime);
     //    }
     //}
-    private void SprintFunction()
-    {
-        
-    }
+    //private void SprintFunction()
+    //{
+    //    if (SprintInput)
+    //    {
+    //        PlayerController.Move(MovementDirection * SprintSpeed * Time.deltaTime);
+
+    //    }
+
+    //}
 }
