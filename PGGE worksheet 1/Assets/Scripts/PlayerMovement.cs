@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController PlayerController;
 
     private float HInput, VInput;
-    private float RunSpeed = 12f;
+    private float RunSpeed = 10f;
+    private float SprintSpeed = 20f;
     private float JumpHeight = 10f;
-    private float SprintSpeed = 24f;
     private float gravity = -5f;
     private float GroundDistance = 0.4f;
 
@@ -34,26 +34,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        IsGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
+        //check if player is touching ground
+        GroundChecker();
 
-        if (IsGrounded && Velocity.y < 0)
-        {
-            Velocity.y = -2.0f; 
-        }
+        //move player with wasd
+        MovePlayer();
 
-        HInput = Input.GetAxis("Horizontal");
-        VInput = Input.GetAxis("Vertical");
-        
-        //move charactor left right back and forth 
-        MovementDirection = transform.right * HInput + transform.forward * VInput;
-        PlayerController.Move(MovementDirection * RunSpeed * Time.deltaTime);
-        
         //gravity effect 
-        Velocity.y += gravity * Time.deltaTime;
-        PlayerController.Move(Velocity  * Time.deltaTime);
+        GravityEffect();
+
+        //function to make player sprint
+        SprintFunction();
 
         //JumpFunction();
-        
+
     }
 
     //private void JumpFunction()
@@ -62,13 +56,38 @@ public class PlayerMovement : MonoBehaviour
     //        PlayerController.Move(MovementDirection * JumpHeight * Time.deltaTime);
     //    }
     //}
-    //private void SprintFunction()
-    //{
-    //    if (SprintInput)
-    //    {
-    //        PlayerController.Move(MovementDirection * SprintSpeed * Time.deltaTime);
+    private void SprintFunction()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerController.Move(MovementDirection * SprintSpeed * Time.deltaTime);
 
-    //    }
+        }
 
-    //}
+    }
+    private void GravityEffect()
+    {
+        Velocity.y += gravity * Time.deltaTime;
+        PlayerController.Move(Velocity * Time.deltaTime);
+    }
+
+    private void GroundChecker()
+    {
+        IsGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
+
+        if (IsGrounded && Velocity.y < 0)
+        {
+            Velocity.y = -2.0f;
+        }
+    }
+    
+    private void MovePlayer()
+    {
+        HInput = Input.GetAxis("Horizontal");
+        VInput = Input.GetAxis("Vertical");
+
+        //move charactor left right back and forth 
+        MovementDirection = transform.right * HInput + transform.forward * VInput;
+        PlayerController.Move(MovementDirection * RunSpeed * Time.deltaTime);
+    }
 }
