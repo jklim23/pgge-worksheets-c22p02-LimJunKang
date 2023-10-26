@@ -9,7 +9,7 @@ public class PlayerMovementAnswer : MonoBehaviour
     public CharacterController mCharacterController;
     public Animator mAnimator;
     public float mWalkSpeed = 1.0f;
-    public float mRotationSpeed = 100.0f;
+    public float mRotationSpeed = 10.0f;
    
 void Start()
     {
