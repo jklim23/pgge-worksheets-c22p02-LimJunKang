@@ -8,8 +8,9 @@ public class PlayerMovementAnswer : MonoBehaviour
     [HideInInspector]
     public CharacterController mCharacterController;
     public Animator mAnimator;
-    public float mWalkSpeed = 1.0f;
-    public float mRotationSpeed = 50.0f;
+
+    [HideInInspector] public float mWalkSpeed = 1.0f;
+    [HideInInspector] public float mRotationSpeed = 50.0f;
    
 void Start()
     {
