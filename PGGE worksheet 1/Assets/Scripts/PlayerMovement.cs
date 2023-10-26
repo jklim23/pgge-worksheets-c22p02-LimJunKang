@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = -5f;
     private float GroundDistance = 0.4f;
 
-    
+    public Transform GroundCheck;
 
     private Vector3 MovementDirection, Velocity;
 
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundChecker()
     {
-        IsGrounded = Physics.CheckSphere(transform.position, GroundDistance, GroundMask);
+        IsGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
 
         if (IsGrounded && Velocity.y < 0)
         {
