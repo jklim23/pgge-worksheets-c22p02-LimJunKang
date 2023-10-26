@@ -17,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
     
 
     private Vector3 MovementDirection, Velocity;
-    public Transform GroundCheck;
+
     public LayerMask GroundMask;
 
-    private bool JumpInput, SprintInput;
+
     private bool IsGrounded;
     private void Start()
     {
@@ -29,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
         
           
 
-        JumpInput = Input.GetKeyDown(KeyCode.Space);
-        SprintInput = Input.GetKeyDown(KeyCode.LeftShift);
+        
     }
     private void Update()
     {
@@ -46,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         //function to make player sprint
         SprintFunction();
 
+        //function to make the player jump (not complete)
         //JumpFunction();
 
     }
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundChecker()
     {
-        IsGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
+        IsGrounded = Physics.CheckSphere(transform.position, GroundDistance, GroundMask);
 
         if (IsGrounded && Velocity.y < 0)
         {
